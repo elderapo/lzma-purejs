@@ -1,7 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
-var Encoder = require('./Encoder');
+define(['../freeze','./Encoder'],function(freeze,Encoder){
+'use strict';
 
 var BitTreeEncoder = function(numBitLevels) {
   this._numBitLevels = numBitLevels;
@@ -76,5 +75,5 @@ BitTreeEncoder.reverseGetPrice = function(models, startIndex,
 };
 
 freeze(BitTreeEncoder.prototype);
-module.exports = freeze(BitTreeEncoder);
-
+return freeze(BitTreeEncoder);
+});

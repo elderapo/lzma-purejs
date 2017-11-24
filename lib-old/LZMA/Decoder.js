@@ -1,8 +1,6 @@
+
+define(['./Base', '../LZ','../RangeCoder'],function(Base, LZ, RangeCoder){
 'use strict';
-if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var Base = require('./Base');
-var LZ = require('../LZ');
-var RangeCoder = require('../RangeCoder');
 /*
 Copyright (c) 2011 Juan Mellado
 
@@ -358,5 +356,5 @@ Decoder.prototype.setDecoderPropertiesFromStream = function(stream) {
   return this.setDecoderProperties(buffer);
 };
 
-module.exports = Decoder;
-
+return Decoder;
+});

@@ -1,6 +1,6 @@
+
+define(['../freeze'],function(freeze){
 'use strict';
-if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
 
   var Base = Object.create(null);
   Base.kNumRepDistances = 4;
@@ -81,5 +81,5 @@ var freeze = require('../freeze');
     (1 << Base.kNumHighLenBits);
   Base.kMatchMaxLen = Base.kMatchMinLen + Base.kNumLenSymbols - 1;
 
-  module.exports = freeze(Base);
-
+  return freeze(Base);
+});

@@ -1,7 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
-var InWindow = require('./InWindow');
+define(['../freeze','./InWindow'],function(freeze,InWindow){
+'use strict';
 
 var CrcTable = (function() {
   var table = [];
@@ -369,5 +368,5 @@ BinTree.prototype.setCutValue = function(cutValue) {
 };
 
 freeze(BinTree.prototype);
-module.exports = freeze(BinTree);
-
+return freeze(BinTree);
+});

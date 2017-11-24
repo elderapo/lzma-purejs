@@ -1,7 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
-var makeBuffer = require('../makeBuffer');
+define(['../freeze','../makeBuffer'],function(freeze,makeBuffer){
+'use strict';
 var OutWindow = function(){
   this._windowSize = 0;
 };
@@ -77,5 +76,5 @@ OutWindow.prototype.getByte = function(distance){
 };
 
 freeze(OutWindow.prototype);
-module.exports = freeze(OutWindow);
-
+return freeze(OutWindow);
+});

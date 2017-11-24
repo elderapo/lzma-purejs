@@ -1,9 +1,6 @@
-'use strict';
 
-var freeze = require('./freeze');
-var makeBuffer = require('./makeBuffer');
-var LZMA = require('./LZMA');
-var Stream = require('./Stream');
+define(['./freeze','./makeBuffer','./LZMA','./Stream'],function(freeze,makeBuffer,LZMA,Stream){
+'use strict';
 /*
 Copyright (c) 2011 Juan Mellado
 
@@ -254,5 +251,5 @@ Util.compressFile = function(inStream, outStream, props, progress) {
   return ('getBuffer' in outStream) ? outStream.getBuffer() : true;
 };
 
-module.exports = freeze(Util);
-
+return freeze(Util);
+});

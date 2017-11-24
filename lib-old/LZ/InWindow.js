@@ -1,7 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
-var makeBuffer = require('../makeBuffer');
+define(['../freeze','../makeBuffer'],function(freeze,makeBuffer){
+'use strict';
 
 var InWindow = function(keepSizeBefore, keepSizeAfter, keepSizeReserve, stream){
   if (arguments.length >= 4) {
@@ -134,5 +133,5 @@ InWindow.prototype.reduceOffsets = function(subValue) {
 };
 
 // can't freeze InWindow.prototype because BinTree wants to subclass it.
-module.exports = freeze(InWindow);
-
+return freeze(InWindow);
+});

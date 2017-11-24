@@ -1,6 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
+define(['../freeze'],function(freeze){
+'use strict';
 
 var Decoder = function(stream){
   if (stream) {
@@ -71,5 +71,5 @@ Decoder.prototype.decodeBit = function(probs, index){
 };
 
 freeze(Decoder.prototype);
-module.exports = freeze(Decoder);
-
+return freeze(Decoder);
+});

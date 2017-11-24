@@ -1,6 +1,6 @@
-'use strict';
 
-var freeze = require('./freeze');
+define(['./freeze'],function(freeze){
+'use strict';
 /* very simple input/output stream interface */
 var Stream = function() {
 };
@@ -42,5 +42,5 @@ Stream.prototype.write = function(buffer, bufOffset, length) {
 Stream.prototype.flush = function() {
 };
 
-module.exports = freeze(Stream);
-
+return freeze(Stream);
+});

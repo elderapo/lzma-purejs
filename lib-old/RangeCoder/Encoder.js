@@ -1,6 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var freeze = require('../freeze');
+define(['../freeze'],function(freeze){
+'use strict';
 
 // largest 32/24/16/8-bit numbers.
 var MAX32 = 0xFFFFFFFF;
@@ -158,5 +158,5 @@ Encoder.getPrice1 = function(prob) {
 Encoder.kNumBitPriceShiftBits = kNumBitPriceShiftBits;
 
 freeze(Encoder.prototype);
-module.exports = freeze(Encoder);
-
+return freeze(Encoder);
+});

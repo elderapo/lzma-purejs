@@ -1,10 +1,6 @@
-'use strict';
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
-var Base = require('./Base');
-var RangeCoder = require('../RangeCoder');
-var LZ = require('../LZ');
-var freeze = require('../freeze');
-var makeBuffer = require('../makeBuffer');
+define(['./Base','../RangeCoder','../LZ','../freeze','../makeBuffer'], function(Base, RangeCoder, LZ, freeze, makeBuffer) {
+'use strict';
 //});var Base,RangeCoder,LZ,makeBuffer;//XXX
 
 // shortcuts
@@ -1370,5 +1366,5 @@ Encoder.EMatchFinderTypeBT2 = EMatchFinderTypeBT2;
 Encoder.EMatchFinderTypeBT4 = EMatchFinderTypeBT4;
 
 freeze(Encoder.prototype);
-module.exports = freeze(Encoder);
-
+return freeze(Encoder);
+});

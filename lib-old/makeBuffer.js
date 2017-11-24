@@ -1,6 +1,6 @@
-'use strict';
 
-
+define([],function(){
+  'use strict';
 
   // typed array / Buffer compatibility.
   var makeBuffer = function(len) {
@@ -18,5 +18,5 @@
     };
   }
 
-  module.exports = makeBuffer;
-
+  return makeBuffer;
+});
